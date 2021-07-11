@@ -1,6 +1,7 @@
 plugins {
     id 'java'
-    id "com.github.spacialcircumstances.gradle-cucumber-reporting" version "0.1.21"
+    id 'com.github.spacialcircumstances.gradle-cucumber-reporting' version '0.1.21'
+    id 'se.thinkcode.cucumber-runner' version '0.0.8'
 }
 
 group 'com.koligrum.hendri'
@@ -11,10 +12,16 @@ repositories {
 }
 
 cucumberReports {
-    runWithJenkins = true
-    outputDir = file("$projectDir/build/generated-reports")
+    runWithJenkins = false
+    outputDir = file('build/generated-reports')
     buildId = System.getenv('BUILD_NUMBER').toString()
-    reports = files("$projectDir/build/cucumber.json")
+    reports = files('build/cucumber.json')
+}
+
+cucumber {
+    main = 'io.cucumber.core.cli.Main'
+    glue = 'com.koligrum.hendri'
+    plugin = ['pretty', "json:build/cucumber.json", "html:build/result"]
 }
 
 

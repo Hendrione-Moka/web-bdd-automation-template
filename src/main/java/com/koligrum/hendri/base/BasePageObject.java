@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class BasePageObject {
 
   public ChromeDriver getDriver() {
-    return WebdriverInitializer.driver;
+    return WebdriverInitializer.getDriver();
   }
 
 }

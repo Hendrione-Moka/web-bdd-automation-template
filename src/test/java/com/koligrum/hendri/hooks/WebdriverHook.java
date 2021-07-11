@@ -22,7 +22,7 @@ public class WebdriverHook {
   @After
   public void quitBrowser(Scenario scenario) {
     if (scenario.isFailed()) {
-      TakesScreenshot screenshot = WebdriverInitializer.driver;
+      TakesScreenshot screenshot = WebdriverInitializer.getDriver();
       byte[] imageByte = screenshot.getScreenshotAs(OutputType.BYTES);
       scenario.attach(imageByte, "image/png", scenario.getId());
     }
