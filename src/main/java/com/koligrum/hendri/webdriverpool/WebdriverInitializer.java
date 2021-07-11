@@ -1,17 +1,19 @@
-package webdriverpool;
+package com.koligrum.hendri.webdriverpool;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.stereotype.Component;
 
 
+@Component("com.koligrum.hendri.webdriverpool.WebdriverInitializer")
 public class WebdriverInitializer {
 
   //global variable / instance variable static
   public static ChromeDriver driver;
 
-  public static void initialize(){
+  public void initialize() {
     //download webdriver dan setup
     WebDriverManager.chromedriver().setup();
 
@@ -25,7 +27,7 @@ public class WebdriverInitializer {
     driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
   }
 
-  public static void quit(){
+  public void quit() {
     driver.quit();
   }
 

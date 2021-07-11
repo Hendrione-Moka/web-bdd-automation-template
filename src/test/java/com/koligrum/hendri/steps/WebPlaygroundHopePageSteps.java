@@ -1,14 +1,15 @@
-package steps;
+package com.koligrum.hendri.steps;
 
+import com.koligrum.hendri.pages.WebPlaygroundHomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import pages.WebPlaygroundHomePage;
-import webdriverpool.WebdriverInitializer;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class WebPlaygroundHopePageSteps {
 
-  WebPlaygroundHomePage homePage = new WebPlaygroundHomePage(WebdriverInitializer.driver);
+  @Autowired
+  WebPlaygroundHomePage homePage;
 
   @Given("User open atlas web playground page")
   public void userOpenAtlasWebPlaygroundPage() {

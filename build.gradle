@@ -3,7 +3,7 @@ plugins {
     id "com.github.spacialcircumstances.gradle-cucumber-reporting" version "0.1.21"
 }
 
-group 'org.example'
+group 'com.koligrum.hendri'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -19,12 +19,20 @@ cucumberReports {
 
 
 dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.5.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.2.5.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.5.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mustache', version: '2.2.5.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.2.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-tx', version: '5.2.4.RELEASE'
+
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
     testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.10.4'
+    compile group: 'io.cucumber', name: 'cucumber-spring', version: '6.10.4'
 }
 
 test {

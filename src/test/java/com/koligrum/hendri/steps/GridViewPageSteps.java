@@ -1,13 +1,14 @@
-package steps;
+package com.koligrum.hendri.steps;
 
+import com.koligrum.hendri.pages.GridViewPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import pages.GridViewPage;
-import webdriverpool.WebdriverInitializer;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class GridViewPageSteps {
 
-  GridViewPage gridViewPage = new GridViewPage(WebdriverInitializer.driver);
+  @Autowired
+  GridViewPage gridViewPage;
 
   @Then("User see quote {string}")
   public void userSeeQuote(String quote) {
