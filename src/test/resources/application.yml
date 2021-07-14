@@ -1,0 +1,6 @@
+webdriver:
+  implicitTimeout: 5
+  explicitTimeout: 10
+  chromeArgs:
+    - '--incognito'
+    - '--start-maximized'

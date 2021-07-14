@@ -1,6 +1,6 @@
-package com.koligrum.hendri.hooks;
+package com.snaptig.hooks;
 
-import com.koligrum.hendri.webdriverpool.WebdriverInitializer;
+import com.snaptig.webdriverpool.WebdriverInitializer;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

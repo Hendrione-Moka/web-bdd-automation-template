@@ -1,7 +1,7 @@
-@AddQuote
+@AddQuote1
 Feature: Add Quote
 
-  @smoke
+  @smoke1
   Scenario: Add Quote with background color yellow
     Given User open atlas web playground page
     When User input quote "There is a will there is a way"

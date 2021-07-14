@@ -1,6 +1,6 @@
-package com.koligrum.hendri.hooks;
+package com.snaptig.hooks;
 
-import com.koligrum.hendri.Application;
+import com.snaptig.Application;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 

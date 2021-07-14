@@ -1,16 +1,21 @@
-package com.koligrum.hendri.webdriverpool;
+package com.snaptig.webdriverpool;
 
+import com.snaptig.properties.WebDriverProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-@Component("com.koligrum.hendri.webdriverpool.WebdriverInitializer")
+@Component("com.snaptig.webdriverpool.WebdriverInitializer")
 public class WebdriverInitializer {
+
+  @Autowired
+  WebDriverProperties webDriverProperties;
 
   //global variable / instance variable static
   public static AtomicReference<HashMap<String, ChromeDriver>> webDriverPool = new AtomicReference<>(
@@ -22,12 +27,13 @@ public class WebdriverInitializer {
 
     //nambahin incognito
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--incognito", "--start-maximized");
+    options.addArguments(webDriverProperties.getChromeArgs());
 
     //inisialisasi webdriver
     ChromeDriver driver = new ChromeDriver(options);
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+    driver.manage().timeouts()
+        .implicitlyWait(webDriverProperties.getImplicitTimeout(), TimeUnit.SECONDS);
     webDriverPool.updateAndGet(dv -> {
       dv.put(Thread.currentThread().getName(), driver);
       return dv;

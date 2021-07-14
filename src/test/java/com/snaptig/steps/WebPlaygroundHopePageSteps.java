@@ -1,6 +1,6 @@
-package com.koligrum.hendri.steps;
+package com.snaptig.steps;
 
-import com.koligrum.hendri.pages.WebPlaygroundHomePage;
+import com.snaptig.pages.WebPlaygroundHomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;

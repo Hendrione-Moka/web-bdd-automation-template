@@ -4,8 +4,8 @@ plugins {
     id 'se.thinkcode.cucumber-runner' version '0.0.8'
 }
 
-group 'com.koligrum.hendri'
-version '1.0-SNAPSHOT'
+group 'com.snaptig'
+version '1.0.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -20,10 +20,9 @@ cucumberReports {
 
 cucumber {
     main = 'io.cucumber.core.cli.Main'
-    glue = 'com.koligrum.hendri'
+    glue = 'com.snaptig'
     plugin = ['pretty', "json:build/cucumber.json", "html:build/result"]
 }
-
 
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.5.RELEASE'
@@ -40,6 +39,9 @@ dependencies {
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.10.4'
     compile group: 'io.cucumber', name: 'cucumber-spring', version: '6.10.4'
+
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
 }
 
 test {

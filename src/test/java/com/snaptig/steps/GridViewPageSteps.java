@@ -1,6 +1,6 @@
-package com.koligrum.hendri.steps;
+package com.snaptig.steps;
 
-import com.koligrum.hendri.pages.GridViewPage;
+import com.snaptig.pages.GridViewPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
